@@ -1,0 +1,11 @@
+1- Authentication:
+    Separate login portals for two types of users
+    - Admin
+    - User
+
+2- Main Tables:
+    - Books
+    - Authors
+    - Users
+    - Admins
+    - Categories

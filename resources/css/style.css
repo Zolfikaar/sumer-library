@@ -1,0 +1,72 @@
+.container{
+    width: 450px;
+    margin: 100px auto;
+  }
+
+  .select-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
+  }
+
+  .select-btn i{
+    transition: transform .3s linear;
+  }
+  .active .select-btn i{
+    transform: rotate(-180deg);
+  }
+  .result-box{
+    /* display: block; */
+    position: relative;
+    margin-top: 20px;
+    padding: 15px;
+    /* width: 300px; */
+    border-radius: 7px;
+    background-color: #eee;
+  }
+  .active .result-box{
+    display: block;
+  }
+  .result-box .search-icon{
+    position: absolute;
+    left: 25px;
+    top: 13px;
+    color: #575757;
+    line-height: 53px;
+    font-size: 20px;
+  }
+  .result-box input{
+    padding: 0 35px;
+    height: 40px;
+    width: 83%;
+    outline: none;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+  }
+  .options {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .options::-webkit-scrollbar{
+    width: 7px;
+  }
+  .options::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 25px;
+  }
+  .options::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+    border-radius: 25px;
+  }
+  .options li{
+    list-style: none;
+    padding: 10px;
+  }
+  .options li:hover, li.selected{
+    background-color: #c9c9c9;
+    cursor: pointer;
+  }
