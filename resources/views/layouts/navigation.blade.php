@@ -24,10 +24,10 @@
                     <x-nav-link :href="route('authors.index')" :active="request()->routeIs('authors.index')">
                         {{ __('Authors') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('authors.index')" :active="request()->routeIs('authors.index')">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                         {{ __('Users') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('authors.index')" :active="request()->routeIs('authors.index')">
+                    <x-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
                         {{ __('Orders/Purchases') }}
                     </x-nav-link>
                 </div>

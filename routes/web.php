@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
@@ -38,8 +40,14 @@ Route::group(['middleware' => 'auth:admin', 'verified', 'prefix' => '/admin'],fu
         Route::put('/authors/update/{id}', 'update')->name('authors.update');
         Route::delete('/authors/delete/{id}', 'delete')->name('authors.delete');
     });
-    Route::controller(AuthorController::class)->group(function () {
 
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/users', 'index')->name('users.index');
+
+    });
+
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/orders', 'index')->name('orders.index');
     });
 
 });
