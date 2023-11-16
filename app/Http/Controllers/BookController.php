@@ -13,7 +13,7 @@ use App\Http\Requests\StoreBookRequest;
 class BookController extends Controller {
 
     public function index(): View {
-        $books = Book::with(['author', 'category'])->get();
+        $books = Book::with(['author', 'category'])->orderBy('id','DESC')->get();
         return view('books.index', compact('books'));
     }
 
@@ -34,7 +34,7 @@ class BookController extends Controller {
             'category_id' => $request->input('category'),
             'year' => $request->input('year'),
         ]);
-        
+
 
         return redirect()->route('books.index')->with('message', 'Book Added Successfully');
     }

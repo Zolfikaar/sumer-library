@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AuthorController extends Controller
 {
     public function index() {
-        $authors = Author::with(['books'])->get();
+        $authors = Author::with(['books'])->orderBy('id','DESC')->get();
         return view('authors.index', compact('authors'));
     }
 

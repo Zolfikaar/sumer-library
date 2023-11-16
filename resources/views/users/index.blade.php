@@ -77,7 +77,7 @@
 
                 <td
                 class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                <x-nav-link :href="route('categories.edit', $user->id)" >
+                <x-nav-link >
                     <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
                         View Details
                     </button>

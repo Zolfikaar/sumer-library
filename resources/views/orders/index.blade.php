@@ -25,7 +25,7 @@
             </th>
             <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                Name
+                Order Number
             </th>
             <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
@@ -34,6 +34,10 @@
             <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                 Address
+            </th>
+            <th
+                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                Order Status
             </th>
 
             @auth
@@ -52,21 +56,28 @@
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                     <div class="flex items-center">
                         <div class="text-sm font-medium leading-5 text-gray-900">
-                            {{$order->name}}
+                            {{$order->order_number}}
                         </div>
                     </div>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                     <div class="flex items-center">
                         <div class="text-sm font-medium leading-5 text-gray-900">
-                            {{$order->phone}}
+                            {{$order->customer_phone}}
                         </div>
                     </div>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                     <div class="flex items-center">
                         <div class="text-sm font-medium leading-5 text-gray-900">
-                            {{$order->address}}
+                            {{$order->customer_address}}
+                        </div>
+                    </div>
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                    <div class="flex items-center">
+                        <div class="text-sm font-medium leading-5 text-gray-900">
+                            {{$order->order_status}}
                         </div>
                     </div>
                 </td>
@@ -77,7 +88,7 @@
 
                 <td
                 class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                <x-nav-link :href="route('categories.edit', $user->id)" >
+                <x-nav-link >
                     <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
                         View Details
                     </button>

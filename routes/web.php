@@ -7,12 +7,14 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 
 Route::view('/', 'welcome');
 
 
 Route::group(['middleware' => 'auth:admin', 'verified', 'prefix' => '/admin'],function() {
-    Route::view('/dashboard','admin.dashboard')->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::view('/dashboard','admin.dashboard')->name('dashboard');
 
     Route::controller(BookController::class)->group(function () {
         Route::get('/books', 'index')->name('books.index');
