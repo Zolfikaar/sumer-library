@@ -12,4 +12,11 @@ class OrderController extends Controller
 
         return view('orders.index', compact('orders'));
     }
+
+
+    public function create() {
+
+
+        return view('orders.create');
+    }
 }

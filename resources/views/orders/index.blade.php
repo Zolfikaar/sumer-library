@@ -9,6 +9,8 @@
         </div>
     </x-slot>
 
+    @if (count($orders) > 0)
+
     @if (session()->has('message'))
 
         <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -104,5 +106,11 @@
 
         </tbody>
     </table>
+
+    @else
+
+    <h1 class="flex justify-center items-center mt-8 font-semibold text-xl text-gray-800 leading-tight">No Data Yet</h1>
+
+    @endif
 
 </x-app-layout>

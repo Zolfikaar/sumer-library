@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('order_id');
             $table->string('item_id');
+            $table->integer('item_count');
             $table->timestamps();
         });
     }

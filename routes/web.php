@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth:admin', 'verified', 'prefix' => '/admin'],fu
 
     Route::controller(OrderController::class)->group(function () {
         Route::get('/orders', 'index')->name('orders.index');
+        Route::get('/orders/create', 'create')->name('orders.create');
     });
 
 });
