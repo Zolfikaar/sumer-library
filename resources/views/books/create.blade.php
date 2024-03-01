@@ -25,11 +25,18 @@
           </div>
 
           <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="Title">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="desc">
                 Description
               </label>
             <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="desc" id="description" cols="30" rows="4"></textarea>
-            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cover">
+                Cover Image
+              </label>
+              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cover" type="file" placeholder="Sell Price" name="cover" value="" required>
+          </div>
 
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="buy_price">
@@ -43,6 +50,13 @@
                 Sell Price
             </label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sell_price" type="" placeholder="Sell Price" name="sell_price" value="" required>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="count">
+                Count
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="count" type="" placeholder="Count" name="count" value="" required>
           </div>
 
           <div class="mb-4">
@@ -68,9 +82,6 @@
                 @endforeach
 
             </select>
-
-
-
           </div>
 
           <div class="mb-4">

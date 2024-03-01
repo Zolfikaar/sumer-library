@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('desc')->nullable();
-            $table->string('count');
+            $table->string('cover')->default('cover_image');
+            $table->integer('count');
             $table->float('buy_price', 4,2);
             $table->float('sell_price', 4,2);
             $table->foreignId('author_id');

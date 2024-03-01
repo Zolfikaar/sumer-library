@@ -21,6 +21,7 @@ class BookFactory extends Factory
             'desc' => fake()->sentence(),
             'buy_price' => fake()->randomFloat(4,5,99),
             'sell_price' => fake()->randomFloat(4,5,99),
+            'count' => fake()->numberBetween(1,20),
             'author_id' => fake()->numberBetween(1,4),
             'category_id' => fake()->numberBetween(1,9),
             'year' => fake()->year(),

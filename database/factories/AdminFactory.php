@@ -38,7 +38,7 @@ class AdminFactory extends Factory
         return [
             'name' => fake()->name,
             'email' => fake()->email(),
-            'password' => Hash::make('Qwer1234!')
+            'password' => Hash::make('Qwer1234')
         ];
     }
 }

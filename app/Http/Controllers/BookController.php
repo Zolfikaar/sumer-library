@@ -28,8 +28,10 @@ class BookController extends Controller {
         Book::create([
             'title' => $request->input('title'),
             'desc' => $request->input('desc'),
+            'cover' => $request->input('cover'),
             'buy_price' => $request->input('buy_price'),
             'sell_price' => $request->input('sell_price'),
+            'count' => $request->input('count'),
             'author_id' => $request->input('author'),
             'category_id' => $request->input('category'),
             'year' => $request->input('year'),
@@ -39,7 +41,7 @@ class BookController extends Controller {
         return redirect()->route('books.index')->with('message', 'Book Added Successfully');
     }
 
-    public function edit($id) {
+    public function edit($id): view {
         $book = Book::findOrFail($id);
         $authors = Author::get();
         $categories = Category::get();
