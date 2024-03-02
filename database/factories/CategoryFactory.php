@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,16 +10,21 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CategoryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    protected $model = Category::class;
+
+    public function definition()
     {
         return [
-            'name' => fake()->name,
-            'desc' => fake()->sentence()
+            'name' => $this->faker->unique()->word,
         ];
+    }
+
+    public function createCategories(array $categories)
+    {
+        foreach ($categories as $category) {
+            DB::table('categories')->insert([
+                'name' => $category,
+            ]);
+        }
     }
 }

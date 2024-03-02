@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('desc')->nullable();
+            $table->longText('desc')->nullable();
             $table->string('cover')->default('cover_image');
             $table->integer('count');
-            $table->float('buy_price', 4,2);
-            $table->float('sell_price', 4,2);
+            $table->decimal('buy_price', 8,2);
+            $table->decimal('sell_price', 8, 2);
             $table->foreignId('author_id');
             $table->foreignId('category_id');
             $table->string('year')->nullable();

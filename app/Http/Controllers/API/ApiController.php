@@ -18,7 +18,7 @@ class ApiController extends Controller
     }
 
     public function books() {
-        $books = Book::all();
+        $books = Book::with(['author', 'category'])->orderBy('id','DESC')->get();
         return response()->json($books, 200);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,16 +10,23 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AuthorFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+
+    protected $model = Author::class;
+
+    public function definition()
     {
         return [
-            'name' => fake()->name,
-            'bio' => fake()->sentence(),
+            'name' => $this->faker->name,
         ];
     }
+
+    public function createAuthors(array $names)
+    {
+        foreach ($names as $name) {
+            DB::table('authors')->insert([
+                'name' => $name,
+            ]);
+        }
+    }
+
 }

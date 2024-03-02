@@ -13,6 +13,24 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory()->times(9)->create();
+        Category::factory()->createCategories($categories = [
+            'Fiction',
+            'Science Fiction',
+            'Classic',
+            'Magical Realism',
+            'Fantasy',
+            'Satire',
+            'Mystery',
+            'Horror',
+            'Dystopian',
+            'Historical Fiction',
+            'Young Adult',
+            'Post-Apocalyptic',
+            'Thriller',
+            'Epic Poetry',
+            'Gothic',
+            'Detective Fiction',
+            'Adventure',
+        ]);
     }
 }
