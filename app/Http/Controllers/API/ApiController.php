@@ -19,4 +19,8 @@ class ApiController extends Controller
         $books = Book::all();
         return response()->json($books, 200);
     }
+
+    public function show_book(Book $book) {
+        return $book;
+    }
 }
